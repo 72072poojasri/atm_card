@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mastercard Debit Card</title>
+  <style>
+    body {
+      background-color: #888;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      width: 360px;
+      height: 220px;
+      border-radius: 15px;
+      background: linear-gradient(to bottom right, #141e30, #243b55);
+      color: white;
+      padding: 20px;
+      position: relative;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .card .title {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      letter-spacing: 0.6px;
+    }
+
+    /* chip */
+    .chip {
+      width: 48px;
+      height: 36px;
+      background: repeating-linear-gradient(
+        45deg,
+        #d0d0d0,
+        #d0d0d0 5px,
+        #b0b0b0 5px,
+        #b0b0b0 10px
+      );
+      border-radius: 6px;
+      margin-bottom: 10px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
+    }
+
+    .top-right {
+      position: absolute;
+      top: 22px;
+      right: 20px;
+      text-align: center;
+    }
+
+    .debit {
+      font-size: 13px;
+      color: #ddd;
+      text-transform: lowercase;
+      margin-bottom: 6px;
+    }
+
+    /* wifi (inline SVG will sit here) */
+    .wifi-svg {
+      width: 26px;
+      height: 26px;
+      display: inline-block;
+      vertical-align: middle;
+      opacity: 0.95;
+      filter: drop-shadow(0 1px 0 rgba(0,0,0,0.2));
+    }
+
+    .card-number {
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin: 30px 0 8px;
+      font-family: "Courier New", monospace;
+    }
+
+    .expiry {
+      font-size: 13px;
+      margin-bottom: 6px;
+      color: #e6e6e6;
+    }
+
+    .name {
+      font-size: 15px;
+      font-weight: 500;
+      color: #f3f3f3;
+    }
+
+    .mastercard-logo {
+      position: absolute;
+      bottom: 18px;
+      right: 22px;
+      width: 56px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      position: absolute;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    }
+
+    .red {
+      background-color: #e23b3b;
+      left: 0;
+      z-index: 1;
+    }
+
+    .orange {
+      background-color: #ff9a2e;
+      left: 18px;
+      z-index: 2;
+      opacity: 0.95;
+    }
+
+    /* optional small responsiveness */
+    @media (max-width: 420px) {
+      .card { transform: scale(0.95); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" role="article" aria-label="Sample debit card">
+    <div class="title">World</div>
+
+    <div class="chip" aria-hidden="true"></div>
+
+    <div class="top-right" aria-hidden="true">
+      <div class="debit">debit</div>
+
+      <!-- inline SVG wifi icon (no external fonts required) -->
+      <svg class="wifi-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <g fill="none" stroke="#ddd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 8.5C6.5 5 11.5 5 16 8.5"/>
+          <path d="M4.5 11C7.5 8.8 10.5 8.8 13.5 11"/>
+          <path d="M7 13.5C8.2 12.6 9.8 12.6 11 13.5"/>
+          <path d="M12 17.2c-.6-.6-1.6-.6-2.2 0a1.6 1.6 0 002.2 0z" fill="#ddd" stroke="none"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="card-number" aria-label="Card number">5412 7512 3412 3456</div>
+
+    <div style="display:flex; gap:20px; align-items:center;">
+      <div>
+        <div class="expiry">VALID THRU</div>
+        <div class="expiry">12/23</div>
+      </div>
+      <div style="flex:1"></div>
+    </div>
+
+    <div class="name">Pooja k. Cardholder</div>
+
+    <div class="mastercard-logo" aria-hidden="true">
+      <div class="circle red"></div>
+      <div class="circle orange"></div>
+    </div>
+  </div>
+
+</body>
+</html>
